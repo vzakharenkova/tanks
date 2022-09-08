@@ -4,7 +4,7 @@ import { GameField } from './js/gameField';
 import { EnemyTank } from './js/gameHandlers/enemyTank';
 import { PlayerTank } from './js/gameHandlers/playerTank';
 
-setTimeout(gameInitialization(), 0);
+gameInitialization();
 
 function gameInitialization() {
   const gameField = new GameField();
@@ -14,7 +14,7 @@ function gameInitialization() {
   gameField.render();
   playerTank.gameField = gameField;
 
-  let interval_id = enemyTank.move();
+  let interval_id;
 
   window.addEventListener('keydown', (e) => {
     playerTank.move(e);
