@@ -4,7 +4,7 @@ import { GameField } from './js/gameField';
 import { EnemyTank } from './js/gameHandlers/enemyTank';
 import { PlayerTank } from './js/gameHandlers/playerTank';
 
-gameInitialization();
+setTimeout(gameInitialization(), 0);
 
 function gameInitialization() {
   const gameField = new GameField();
