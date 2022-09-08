@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>ISsoft: Tanks</title>
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+  <script defer src="main.js"></script></head>
+  <body>
+    <main>
+      <section id="game-field">
+        <h2>ISsoft: Tanks</h2>
+
+        <div id="game-map"></div>
+      </section>
+
+      <section id="legend">
+        <h2>Легенда</h2>
+        <ul class="legend-list">
+          <li class="legend-item">
+            <div class="game-object game-object__player-tank"></div>
+            танк игрока
+          </li>
+          <li class="legend-item">
+            <div class="game-object game-object__enemy-tank"></div>
+            вражеский танк
+          </li>
+          <li class="legend-item">
+            <div class="game-object game-object__wall"></div>
+            стена
+          </li>
+        </ul>
+        <h2>Игровой процесс</h2>
+        <ul class="process-list">
+          <li class="process-item player">
+            <div class="game-object game-object__player-tank"></div>
+            Осталось жизней: <span>3</span>
+          </li>
+          <li class="process-item enemy">
+            <div class="game-object game-object__enemy-tank"></div>
+            Осталось танков: <span>21</span>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
