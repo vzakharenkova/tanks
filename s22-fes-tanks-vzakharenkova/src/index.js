@@ -14,7 +14,7 @@ function gameInitialization() {
   gameField.render();
   playerTank.gameField = gameField;
 
-  let interval_id;
+  let interval_id = (() => enemyTank.move())();
 
   window.addEventListener('keydown', (e) => {
     playerTank.move(e);
