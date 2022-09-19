@@ -7,6 +7,14 @@ import { PlayerTank } from './js/gameHandlers/playerTank';
 gameInitialization();
 
 function gameInitialization() {
+  if (window.location.hash) {
+    window.location.href = window.location.href.slice(
+      0,
+      window.location.href.length - 1
+    );
+  } else {
+    window.location.href = window.location.href + '#';
+  }
   const gameField = new GameField();
   const enemyTank = new EnemyTank();
   const playerTank = new PlayerTank();
