@@ -66,7 +66,10 @@ export class Tank {
   findRenewPoint(enemyPoints) {
     let index = this.getRandomIndex(0, 2);
 
-    if (enemyPoints[index].classList.contains('game-object__enemy-tank')) {
+    if (
+      enemyPoints[index].classList.contains('game-object__enemy-tank') ||
+      enemyPoints[index].classList.contains('game-object__player-tank')
+    ) {
       return this.findRenewPoint(enemyPoints);
     } else {
       return index;

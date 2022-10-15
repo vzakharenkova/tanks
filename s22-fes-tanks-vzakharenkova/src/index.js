@@ -7,42 +7,34 @@ import { PlayerTank } from './js/gameHandlers/playerTank';
 gameInitialization();
 
 function gameInitialization() {
-  if (window.location.hash) {
-    window.location.href = window.location.href.slice(
-      0,
-      window.location.href.length - 1
-    );
-  } else {
-    window.location.href = window.location.href + '#';
-  }
   const gameField = new GameField();
   const enemyTank = new EnemyTank();
   const playerTank = new PlayerTank();
+  const startBtn = document.querySelector('.control-start');
+  const stopBtn = document.querySelector('.control-stop');
+  let interval_id;
+  const playerListner = (e) => {
+    playerTank.move(e);
+    playerTank.startShooting(e);
+  };
+  const startGameHandler = () => {
+    interval_id = enemyTank.move();
+    window.addEventListener('keydown', playerListner, false);
+    startBtn.disabled = true;
+    stopBtn.disabled = false;
+  };
+  const stopGameHandler = () => {
+    clearInterval(interval_id);
+    interval_id = 0;
+    window.removeEventListener('keydown', playerListner, false);
+    startBtn.disabled = false;
+    stopBtn.disabled = true;
+  };
 
   gameField.render();
   playerTank.gameField = gameField;
+  startBtn.addEventListener('click', startGameHandler);
+  stopBtn.addEventListener('click', stopGameHandler);
 
-  let interval_id = enemyTank.move();
-
-  window.addEventListener('keydown', (e) => {
-    playerTank.move(e);
-    playerTank.startShooting(e);
-  });
-
-  window.addEventListener(
-    'focus',
-    function () {
-      interval_id = enemyTank.move();
-    },
-    true
-  );
-
-  window.addEventListener(
-    'blur',
-    function () {
-      clearInterval(interval_id);
-      interval_id = 0;
-    },
-    true
-  );
+  window.addEventListener('blur', stopGameHandler, false);
 }

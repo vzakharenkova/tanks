@@ -48,7 +48,8 @@ main {
 }
 
 .legend-list,
-.process-list {
+.process-list,
+.game-controls {
   padding: 0;
 }
 .legend-item,
@@ -64,6 +65,27 @@ main {
 .process-item .game-object {
   top: 0;
   left: 0;
+}
+
+.game-controls {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: space-around;
+}
+.control {
+  width: fit-content;
+}
+
+.control-btn {
+  display: inline-block;
+  width: 100px;
+  padding: 10px;
+  border: none;
+  background-color: rgb(254, 92, 63);
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .map-row {

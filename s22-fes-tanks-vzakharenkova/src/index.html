@@ -13,36 +13,45 @@
   <body>
     <main>
       <section id="game-field">
-        <h2>ISsoft: Tanks</h2>
+        <h2>Tanks</h2>
 
         <div id="game-map"></div>
       </section>
 
       <section id="legend">
-        <h2>Легенда</h2>
+        <h2>Legend</h2>
         <ul class="legend-list">
           <li class="legend-item">
             <div class="game-object game-object__player-tank"></div>
-            танк игрока
+            Player's tank
           </li>
           <li class="legend-item">
             <div class="game-object game-object__enemy-tank"></div>
-            вражеский танк
+            Enemy tank
           </li>
           <li class="legend-item">
             <div class="game-object game-object__wall"></div>
-            стена
+            Wall
           </li>
         </ul>
-        <h2>Игровой процесс</h2>
+        <h2>Game process</h2>
         <ul class="process-list">
           <li class="process-item player">
             <div class="game-object game-object__player-tank"></div>
-            Осталось жизней: <span>3</span>
+            Lifes left: <span>3</span>
           </li>
           <li class="process-item enemy">
             <div class="game-object game-object__enemy-tank"></div>
-            Осталось танков: <span>21</span>
+            Enemy tanks left: <span>21</span>
+          </li>
+        </ul>
+        <h2>Game controls</h2>
+        <ul class="game-controls">
+          <li class="control">
+            <button class="control-btn control-start">Start</button>
+          </li>
+          <li class="control">
+            <button class="control-btn control-stop" disabled>Stop</button>
           </li>
         </ul>
       </section>

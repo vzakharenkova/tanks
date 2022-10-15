@@ -71,20 +71,18 @@ export class PlayerTank extends Tank {
     if (GAME_CONFIG.ENEMY_TANKS_COUNT > 2) {
       const enemyPoints = document.querySelectorAll('.map-cell-2');
       const index = this.findRenewPoint(enemyPoints);
-      setTimeout(() => {
-        that.changeTankAttribites(
-          enemyPoints[index],
-          enemyPoints[index],
-          'game-object__enemy-tank',
-          0,
-          that.gameField.enemyLastIndex
-        );
-        if (document.querySelectorAll('.game-object__enemy-tank').length < 3) {
-          setTimeout(() => that.renew(), 0);
-        } else {
-          that.gameField.enemyLastIndex++;
-        }
-      }, GAME_CONFIG.UPDATES_TIMER);
+      that.changeTankAttribites(
+        enemyPoints[index],
+        enemyPoints[index],
+        'game-object__enemy-tank',
+        0,
+        that.gameField.enemyLastIndex
+      );
+      if (document.querySelectorAll('.game-object__enemy-tank').length < 3) {
+        that.renew();
+      } else {
+        that.gameField.enemyLastIndex++;
+      }
     }
   }
 }
